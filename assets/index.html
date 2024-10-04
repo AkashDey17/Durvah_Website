@@ -1,0 +1,93 @@
+95% of storage used … If you run out, you can't create, edit and upload files.
+Get 100 GB of storage for ₹130.00 ₹35.00/month for 2 months.
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make Video Gallery In HTML And CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="section-container">
+      <h1>How to Make a Video Gallery</h1>
+      <div class="section-row">
+        <div class="section-col">
+          <div class="section-feature-img">
+            <img src="car.jpg" width="100%" />
+            <img
+              src="play.png"
+              class="section-play-btn"
+              onclick="playVideo('car.mp4')"
+            />
+          </div>
+        </div>
+        <div class="section-col">
+          <div class="section-small-img-row">
+            <div class="section-small-img">
+              <img src="nature.jpg" alt="" />
+              <img
+                src="play.png"
+                class="section-play-btn"
+                onclick="playVideo('nature.mp4')"
+              />
+            </div>
+            <p>
+              How to add Multiple videos in a website or <br />
+              to make a video gallery
+            </p>
+          </div>
+          <div class="section-small-img-row">
+            <div class="section-small-img">
+              <img src="black.jpg" alt="" />
+              <img
+                src="play.png"
+                class="section-play-btn"
+                onclick="playVideo('black.mp4')"
+              />
+            </div>
+            <p>
+              How to add Multiple videos in a website or <br />
+              to make a video gallery
+            </p>
+          </div>
+          <div class="section-small-img-row">
+            <div class="section-small-img">
+              <img src="cat.jpg" alt="" />
+              <img
+                src="play.png"
+                class="section-play-btn"
+                onclick="playVideo('cat.mp4')"
+              />
+            </div>
+            <p>
+              How to add Multiple videos in a website or <br />
+              to make a video gallery
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-video-player" id="section-videoplayer">
+      <video width="100%" controls autoplay id="section-myvideo">
+        <source src="car.mp4" type="video/mp4" />
+      </video>
+      <img src="close.png" class="section-close-btn" onclick="stopbtn()" />
+    </div>
+
+    <script>
+      var videoplayer = document.getElementById("section-videoplayer");
+      var myvideo = document.getElementById("section-myvideo");
+
+      function stopbtn() {
+        videoplayer.style.display = "none";
+      }
+      function playVideo(file) {
+        myvideo.src = file;
+        videoplayer.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
