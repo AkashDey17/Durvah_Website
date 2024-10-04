@@ -1,0 +1,1548 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Gothic A1, sans-serif;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 10%;
+  /* background-color: rgba(0,0,0,0.3);
+        backdrop-filter: blur(50px); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  height: 90px;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(50px); */
+  background-color: #000000;
+  z-index: -1;
+}
+
+.header:hover::after {
+  left: 100%;
+}
+.logo {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 2.5rem;
+}
+#check {
+  display: none;
+}
+
+.icons {
+  position: absolute;
+  right: 5%;
+  font-size: 2.8rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 1.3rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .icons {
+    display: inline-flex;
+  }
+  #check:checked ~ .icons #menu-icon {
+    display: none;
+  }
+  .icons #close-icon {
+    display: none;
+  }
+  #check:checked ~ .icons #close-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    /* background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3); */
+    background-color: #000000;
+    transition: 0.3s ease;
+    overflow: hidden;
+  }
+
+  #check:checked ~ .navbar {
+    height: 17.7rem;
+  }
+  .navbar a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  #check:checked ~ .navbar a {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(0.15s * var(--i));
+  }
+}
+
+/*section1*/
+.slideshow-container {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  height: 50%;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  /* border-radius: 50%; */
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*section 2*/
+.section2-1 {
+  display: flex;
+  gap: 20px;
+  padding: 0px 80px;
+}
+.section2-1-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section2-1-text-btn a {
+  color: #000;
+  letter-spacing: 5px;
+  background-color: #389ea3;
+  border: 5px #000;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.w-button {
+  color: #fff;
+  line-height: inherit;
+  cursor: pointer;
+  background-color: #3898ec;
+  border: 0;
+  border-radius: 0;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+.section2-1-text-heading h1 {
+  color: #389ea3;
+
+  font-size: 38px;
+  line-height: 44px;
+}
+.section2-1-text-heading1 h1 {
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 44px;
+}
+.section2-1-text-para p {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+.section2-1-text-btn a {
+  color: #fff;
+  font-size: 16px;
+}
+@media (max-width: 910px) {
+  .section2-1 {
+    flex-direction: column;
+  }
+}
+@media (max-width: 630px) {
+  .section2-1-img img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .section2-1-text-heading h1 {
+    font-size: 30px;
+  }
+  .section2-1-text-heading1 h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .section2-1-img img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .section2-1-text-heading1 h1 {
+    font-size: 20px;
+  }
+}
+/*section2 ends*/
+/*----------------------------------------*/
+/*section 3 starts*/
+.slideshow-container1 {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides1 {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev1,
+.next1 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next1 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev1:hover,
+.next1:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text1 {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  height: 50%;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+/* Number text (1/3 etc) */
+.numbertext1 {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot1 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  /* border-radius: 50%; */
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active1,
+.dot1:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade1 {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*section 3 ends*/
+/*-----------------------------------------*/
+/*section 4 starts*/
+.section4-1 {
+  display: flex;
+  gap: 20px;
+  padding: 0px 80px;
+}
+.section4-1-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section4-1-text-btn a {
+  color: #000;
+  letter-spacing: 5px;
+  background-color: #389ea3;
+  border: 5px #000;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.w-button {
+  color: #fff;
+  line-height: inherit;
+  cursor: pointer;
+  background-color: #3898ec;
+  border: 0;
+  border-radius: 0;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+.section4-1-text-heading h1 {
+  color: #389ea3;
+
+  font-size: 38px;
+  line-height: 44px;
+}
+.section4-1-text-heading1 h1 {
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 44px;
+}
+.section4-1-text-para p {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+.section4-1-text-btn a {
+  color: #fff;
+  font-size: 16px;
+}
+@media (max-width: 910px) {
+  .section4-1 {
+    flex-direction: column;
+  }
+}
+@media (max-width: 630px) {
+  .section4-1-img img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .section4-1-text-heading h1 {
+    font-size: 30px;
+  }
+  .section4-1-text-heading1 h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .section4-1-img img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .section4-1-text-heading1 h1 {
+    font-size: 20px;
+  }
+}
+/*section 4 ends*/
+/*--------------------------------------------*/
+/*section5 starts*/
+.slideshow-container2 {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides2 {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev2,
+.next2 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next2 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev2:hover,
+.next2:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text2 {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  height: 50%;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+/* Number text (1/3 etc) */
+.numbertext2 {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot2 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  /* border-radius: 50%; */
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active2,
+.dot2:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade2 {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*section5 ends*/
+/*---------------------------------------------*/
+/*section6 starts*/
+.section6-1 {
+  display: flex;
+  gap: 20px;
+  padding: 0px 80px;
+}
+.section6-1-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section6-1-text-btn a {
+  color: #000;
+  letter-spacing: 5px;
+  background-color: #389ea3;
+  border: 5px #000;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.w-button {
+  color: #fff;
+  line-height: inherit;
+  cursor: pointer;
+  background-color: #3898ec;
+  border: 0;
+  border-radius: 0;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+.section6-1-text-heading h1 {
+  color: #389ea3;
+
+  font-size: 38px;
+  line-height: 44px;
+}
+.section6-1-text-heading1 h1 {
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 44px;
+}
+.section6-1-text-para p {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+.section6-1-text-btn a {
+  color: #fff;
+  font-size: 16px;
+}
+@media (max-width: 910px) {
+  .section6-1 {
+    flex-direction: column;
+  }
+}
+@media (max-width: 630px) {
+  .section6-1-img img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .section6-1-text-heading h1 {
+    font-size: 30px;
+  }
+  .section6-1-text-heading1 h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .section6-1-img img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .section6-1-text-heading1 h1 {
+    font-size: 20px;
+  }
+}
+/*section6 ends*/
+/*----------------------------------------------*/
+/*section7 starts*/
+.slideshow-container3 {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides3 {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev3,
+.next3 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next3 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev3:hover,
+.next3:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text3 {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  height: 50%;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+/* Number text (1/3 etc) */
+.numbertext3 {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot3 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  /* border-radius: 50%; */
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active3,
+.dot3:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade3 {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*section7 ends*/
+/*----------------------------------------------*/
+/*section 8 starts*/
+.section8-1 {
+  display: flex;
+  gap: 20px;
+  padding: 0px 80px;
+}
+.section8-1-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section8-1-text-btn a {
+  color: #000;
+  letter-spacing: 5px;
+  background-color: #389ea3;
+  border: 5px #000;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.w-button {
+  color: #fff;
+  line-height: inherit;
+  cursor: pointer;
+  background-color: #3898ec;
+  border: 0;
+  border-radius: 0;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+.section8-1-text-heading h1 {
+  color: #389ea3;
+
+  font-size: 38px;
+  line-height: 44px;
+}
+.section8-1-text-heading1 h1 {
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 44px;
+}
+.section8-1-text-para p {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+.section8-1-text-btn a {
+  color: #fff;
+  font-size: 16px;
+}
+@media (max-width: 910px) {
+  .section8-1 {
+    flex-direction: column;
+  }
+}
+@media (max-width: 630px) {
+  .section8-1-img img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .section8-1-text-heading h1 {
+    font-size: 30px;
+  }
+  .section8-1-text-heading1 h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .section8-1-img img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .section8-1-text-heading1 h1 {
+    font-size: 20px;
+  }
+}
+/*section 8 ends*/
+/*-------------------------------------------------*/
+/*section 9 starts*/
+.slideshow-container4 {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides4 {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev4,
+.next4 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next4 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev4:hover,
+.next4:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text4 {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  height: 50%;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+/* Number text (1/3 etc) */
+.numbertext4 {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot4 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  /* border-radius: 50%; */
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active4,
+.dot4:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade4 {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*section 9 ends*/
+/*--------------------------------------------------*/
+/*section 10 starts*/
+.section10-1 {
+  display: flex;
+  gap: 20px;
+  padding: 0px 80px;
+}
+.section10-1-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section10-1-text-btn a {
+  color: #000;
+  letter-spacing: 5px;
+  background-color: #389ea3;
+  border: 5px #000;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.w-button {
+  color: #fff;
+  line-height: inherit;
+  cursor: pointer;
+  background-color: #3898ec;
+  border: 0;
+  border-radius: 0;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+.section10-1-text-heading h1 {
+  color: #389ea3;
+
+  font-size: 38px;
+  line-height: 44px;
+}
+.section10-1-text-heading1 h1 {
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 44px;
+}
+.section10-1-text-para p {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+.section10-1-text-btn a {
+  color: #fff;
+  font-size: 16px;
+}
+@media (max-width: 910px) {
+  .section10-1 {
+    flex-direction: column;
+  }
+}
+@media (max-width: 630px) {
+  .section10-1-img img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .section10-1-text-heading h1 {
+    font-size: 30px;
+  }
+  .section10-1-text-heading1 h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .section10-1-img img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .section10-1-text-heading1 h1 {
+    font-size: 20px;
+  }
+}
+/*section 10 ends*/
+/*--------------------------------------------------*/
+/*section 11 starts*/
+.slideshow-container5 {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides5 {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev5,
+.next5 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next5 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev5:hover,
+.next5:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text5 {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  height: 50%;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+/* Number text (1/3 etc) */
+.numbertext5 {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot5 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  /* border-radius: 50%; */
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active5,
+.dot5:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade5 {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*section 11 ends*/
+/*-----------------------------------------------------*/
+/*section 12 starts*/
+.section12-1 {
+  display: flex;
+  gap: 20px;
+  padding: 0px 80px;
+}
+.section12-1-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section12-1-text-btn a {
+  color: #000;
+  letter-spacing: 5px;
+  background-color: #389ea3;
+  border: 5px #000;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.w-button {
+  color: #fff;
+  line-height: inherit;
+  cursor: pointer;
+  background-color: #3898ec;
+  border: 0;
+  border-radius: 0;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+.section12-1-text-heading h1 {
+  color: #389ea3;
+
+  font-size: 38px;
+  line-height: 44px;
+}
+.section12-1-text-heading1 h1 {
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 44px;
+}
+.section12-1-text-para p {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+.section12-1-text-btn a {
+  color: #fff;
+  font-size: 16px;
+}
+@media (max-width: 910px) {
+  .section12-1 {
+    flex-direction: column;
+  }
+}
+@media (max-width: 630px) {
+  .section12-1-img img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .section12-1-text-heading h1 {
+    font-size: 30px;
+  }
+  .section12-1-text-heading1 h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .section12-1-img img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .section12-1-text-heading1 h1 {
+    font-size: 20px;
+  }
+}
+/*section 12 ends*/
+/*------------------------------------------------------*/
+/*section 13 starts*/
+.slideshow-container6 {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides6 {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev6,
+.next6 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next6 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev6:hover,
+.next6:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text6 {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  height: 50%;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+/* Number text (1/3 etc) */
+.numbertext6 {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot6 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  /* border-radius: 50%; */
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active6,
+.dot6:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade6 {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*section 13 ends*/
+/*-------------------------------------------------------*/
+/*section 14 starts*/
+.section14-1 {
+  display: flex;
+  gap: 20px;
+  padding: 0px 80px;
+}
+.section14-1-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section14-1-text-btn a {
+  color: #000;
+  letter-spacing: 5px;
+  background-color: #389ea3;
+  border: 5px #000;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.w-button {
+  color: #fff;
+  line-height: inherit;
+  cursor: pointer;
+  background-color: #3898ec;
+  border: 0;
+  border-radius: 0;
+  padding: 9px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+.section14-1-text-heading h1 {
+  color: #389ea3;
+
+  font-size: 38px;
+  line-height: 44px;
+}
+.section14-1-text-heading1 h1 {
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 44px;
+}
+.section14-1-text-para p {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-right: 20px;
+  font-family: Gothic A1, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+.section14-1-text-btn a {
+  color: #fff;
+  font-size: 16px;
+}
+@media (max-width: 910px) {
+  .section14-1 {
+    flex-direction: column;
+  }
+}
+@media (max-width: 630px) {
+  .section14-1-img img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .section14-1-text-heading h1 {
+    font-size: 30px;
+  }
+  .section14-1-text-heading1 h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .section14-1-img img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .section14-1-text-heading1 h1 {
+    font-size: 20px;
+  }
+}
+
+/*section14 ends*/
+/*---------------------------------------------------------*/
+/*footer starts*/
+footer {
+  background-color: #d4d4d4;
+  padding: 80px 30px 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 250px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid white; */
+  margin-top: 40px;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-divider {
+  background-color: #e4ebf3;
+  width: 100%;
+  height: 1px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-title {
+  flex-direction: column;
+  gap: 10px;
+  display: flex;
+}
+
+.footer-title a {
+  text-decoration: none;
+  color: #1a1b1f;
+  margin-top: 20px;
+}
+
+.footer-container {
+  margin-top: 40px;
+}
+
+.footer-social-block a {
+  margin-left: 12px;
+}
+.footer-form-block {
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  display: flex;
+}
+.footer-form-block .footer-form-field {
+  border: 1px solid #a6b1bf;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  height: 48px;
+  margin-bottom: 0;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 22px;
+  transition: all 0.2s;
+  width: 100%;
+}
+.footer-form-submit {
+  background-color: #1a1b1f;
+  background-image: url(https://cdn.prod.website-files.com/62434fa732124a0fb112aab4/62434fa732124a29b112aac4_ic%20Arrow%20Go.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  width: 50px;
+  height: 48px;
+  transition: all 0.2s;
+}
+
+@media (max-width: 650px) {
+  .footer-top {
+    flex-direction: column;
+  }
+  .footer-title {
+    align-items: center;
+  }
+  .footer-form-field {
+    width: 350px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+  }
+  .footer-copyright {
+    font-size: 10px;
+  }
+}
+/*footer ends*/
+
+@media (max-width: 600px) {
+  .text,
+  .text1,
+  .text2,
+  .text3,
+  .text4,
+  .text5,
+  .text6 {
+    font-size: 30px;
+  }
+  .section2-1,
+  .section4-1,
+  .section6-1,
+  .section8-1,
+  .section10-1,
+  .section12-1,
+  .section14-1 {
+    padding: 0 0 30px 30px;
+  }
+  footer {
+    top: 50px;
+  }
+}

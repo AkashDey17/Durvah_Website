@@ -25,6 +25,10 @@ app.get("/contact", (req, res) => {
   res.render("contact.ejs");
 });
 
+app.get("/service1", (req, res) => {
+  res.render("service1.ejs");
+});
+
 app.listen(port, () => {
   console.log(`App is listening to port ${port}`);
 });
