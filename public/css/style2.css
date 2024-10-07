@@ -1461,15 +1461,6 @@ footer {
   text-decoration: none;
 }
 
-/* .section5-container .section5-box-container .section5-box .btn:hover {
-    letter-spacing: 1px;
-  }
-  
-  .section5-container .section5-box-container .section5-box:hover {
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    transform: scale(1.03);
-  } */
-
 @media (max-width: 768px) {
   .product-container {
     padding: 20px;
@@ -1505,7 +1496,7 @@ footer {
   border-radius: 10px;
 }
 /* glow */
-.product-container .product-box-container .product-box .btn::before {
+/* .product-container .product-box-container .product-box .btn::before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -1530,7 +1521,7 @@ footer {
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
   opacity: 0;
-}
+} */
 
 @keyframes glowing {
   0% {
@@ -1557,6 +1548,15 @@ footer {
   color: #000;
   font-weight: bold;
 }
+/* Add hover effect for the arrow icon */
+.product-container .product-box-container .product-box .btn i {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+.product-container .product-box-container .product-box .btn:hover i {
+  margin-left: 15px;
+}
 
 /*colorful cards*/
 .services-container {
@@ -1571,9 +1571,9 @@ footer {
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   font-size: 50px;
   background: linear-gradient(180deg, #7b2cff 0%, #aa3eff 15%, #fe5c01 100%);
-  -webkit-background-clip: text; /* For Safari */
-  -webkit-text-fill-color: transparent; /* For Safari */
-  color: transparent; /* For other browsers */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .services-container .services-box-container {
@@ -1603,13 +1603,6 @@ footer {
 }
 
 .services-container .services-box-container .services-box .services-btn {
-  /* margin-top: 10px;
-  display: inline-block;
-  background: #333;
-  color: #fff;
-  font-size: 17px;
-  border-radius: 5px;
-  padding: 8px 25px; */
   position: relative;
   background: #fff;
   color: #ffffff;
@@ -1621,13 +1614,6 @@ footer {
   transition: 0.5s;
   border-radius: 50px;
 }
-
-/* .services-container .services-box-container .services-box .services-btn:hover {
-  background: var(--clr);
-  color: var(--clr);
-  letter-spacing: 0.25em;
-  box-shadow: 0 0 35px var(--clr);
-} */
 
 .services-container
   .services-box-container
