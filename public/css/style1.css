@@ -313,3 +313,41 @@ h1 {
     font-size: 26px;
   }
 }
+
+.hidden {
+  opacity: 0;
+  transform: translateY(50px); /* Start slightly below */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0); /* Final position */
+}
+
+/* Example for div-sap and div-ivalua */
+.div-sap,
+.div-ivalua {
+  background-color: #070606;
+  background-image: url(https://cdn.prod.website-files.com/66b249c6e2cfdcc3c7dabfa1/66b4359e7205f20b995ae2d8_hugo-barbosa-AZ1dAHLnYFc-unsplash.jpg);
+  background-position: 50%;
+  background-size: auto;
+  border-radius: 15px;
+  transition: all 0.8s ease-in-out; /* Slower transition */
+}
+
+/* For other elements with transition effects */
+.div-salesforce,
+.div-qad {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  transition: all 0.8s ease-in-out; /* Slower transition */
+}
+
+/* Button transitions */
+.w-button {
+  transition: background-color 0.8s ease, border-color 0.8s ease,
+    color 0.8s ease; /* Slower transition */
+}

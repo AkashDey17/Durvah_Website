@@ -765,11 +765,13 @@ nav .navbar .links li:hover .js-sub-menu {
   font-weight: 300;
 }
 .section5-1-description {
-  font-size: 40px;
+  font-size: 35px;
   line-height: 50px;
 }
 .section5-1-description p {
   font-weight: 300;
+  font-size: 30px;
+  color: #333;
 }
 .section5-2 {
   display: flex;
@@ -793,6 +795,8 @@ nav .navbar .links li:hover .js-sub-menu {
 
 .section5-2-description p {
   font-weight: 300;
+  font-size: 30px;
+  color: #333;
 }
 .section5-3 {
   display: flex;
@@ -813,6 +817,8 @@ nav .navbar .links li:hover .js-sub-menu {
 
 .section5-3-description p {
   font-weight: 300;
+  font-size: 30px;
+  color: #333;
 }
 
 @media (max-width: 660px) {
