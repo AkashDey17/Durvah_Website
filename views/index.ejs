@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Durvah</title>
+
     <link rel="stylesheet" href="../public/css/style2.css" />
     <link
       rel="icon"
@@ -67,7 +68,12 @@
         <div class="search-box">
           <i class="bx bx-search"></i>
           <div class="input-box">
-            <input type="text" placeholder="Search..." />
+            <input
+              type="text"
+              id="search-item"
+              placeholder="Search..."
+              onkeyup="search()"
+            />
           </div>
         </div>
       </div>
@@ -110,7 +116,7 @@
     </section>
 
     <section class="section2">
-      <div class="section2-container">
+      <div class="section2-container" id="product-list">
         <div class="section2-card__container">
           <article class="card__article">
             <!-- <img src="assets/animation1.jpeg" alt="image" class="card__img" /> -->
@@ -777,6 +783,7 @@
         },
       });
     </script>
+
     <script src="../public/js/script.js"></script>
     <script>
       window.addEventListener("load", () => {
@@ -789,7 +796,28 @@
         });
       });
     </script>
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      //search bar
+      const search = () => {
+        const searchBox = document
+          .getElementById("search-item")
+          .value.toUpperCase();
+        const storeItems = document.getElementById("product-list");
+        const product = document.querySelectorAll(".card__article");
+        const pname = storeItems.getElementsByTagName("h2");
+
+        for (var i = 0; i < pname.length; i++) {
+          let match = product[i].getElementsByTagName("h2")[0];
+          if (match) {
+            let textvalue = match.textContent || match.innerHTML;
+            if (textvalue.toLocaleUpperCase().indexOf(searchBox) > -1) {
+              product[i].style.display = "";
+            } else {
+              product[i].style.display = "none";
+            }
+          }
+        }
+      };
+    </script>
   </body>
 </html>
