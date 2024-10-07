@@ -16,6 +16,7 @@
     />
   </head>
   <body>
+    <div class="loader"></div>
     <header class="header">
       <a href="/" class="logo">
         <img
@@ -358,6 +359,17 @@
         </div>
       </div>
     </footer>
+    <script>
+      window.addEventListener("load", () => {
+        const loader = document.querySelector(".loader");
+
+        loader.classList.add("loader--hidden");
+
+        loader.addEventListener("transitionend", () => {
+          document.body.removeChild(loader);
+        });
+      });
+    </script>
 
     <!-- <script src="product.js"></script> -->
   </body>
