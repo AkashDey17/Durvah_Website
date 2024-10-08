@@ -310,6 +310,10 @@ nav .navbar .links li:hover .js-sub-menu {
   }
 }
 
+/*------header 2 starts---------------------------*/
+
+/*-----------header 2 ends ------------------------*/
+
 /*PreLoader*/
 
 .loader {
@@ -1461,6 +1465,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 15px;
+  cursor: pointer;
 }
 
 .services-container .services-box-container .services-box {
@@ -1563,6 +1568,7 @@ footer {
 }
 
 .services-container .services-box-container .services-box:hover {
+  transition: 0.5s all;
   box-shadow: 0 10px 15px rgba(255, 255, 255, 0.3);
   transform: scale(1.03);
 }

@@ -4,6 +4,9 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /*custom scroll bar*/
 ::-webkit-scrollbar {
@@ -260,12 +263,24 @@
   text-align: center;
   border-radius: 8px;
   transition: transform 0.3s ease;
+  animation: CssScrollReveal ease-in-out both;
+  animation-timeline: view();
+  animation-range: entry 50% cover 50%;
 }
 
 .service-card:hover {
   transform: translateY(-10px);
 }
-
+@keyframes CssScrollReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .service-card h3 {
   margin: 15px 0;
 }
