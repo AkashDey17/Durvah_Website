@@ -726,11 +726,21 @@
 }
 
 .section4-container .box-container .box {
+  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background: #fff;
+  text-align: left;
+  padding: 30px 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space evenly */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   background: #fff;
   text-align: left;
   padding: 30px 20px;
+  min-height: 300px; /* Ensure consistent height across all boxes */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .section4-container .box-container .box img {
@@ -750,6 +760,15 @@
 }
 
 .section4-container .box-container .box .btn {
+  /* margin-top: 10px;
+  display: inline-block;
+  background: #fff;
+  color: #000000;
+  font-size: 17px;
+  border-radius: 20px;
+  padding: 8px 25px;
+  text-decoration: none;
+  border: 2px solid #01a982; */
   margin-top: 10px;
   display: inline-block;
   background: #fff;
@@ -759,10 +778,17 @@
   padding: 8px 25px;
   text-decoration: none;
   border: 2px solid #01a982;
+  align-self: start; /* Align button to the left if needed */
+}
+
+.section4-container .box-container .box:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03);
 }
 
 .section4-container .box-container .box .btn:hover {
   letter-spacing: 1px;
+  transition: 0.3s ease;
 }
 
 .section4-container .box-container .box:hover {
@@ -810,6 +836,12 @@
   background: #fff;
   text-align: left;
   padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space evenly */
+  padding: 30px 20px;
+  min-height: 300px; /* Ensure consistent height across all boxes */
+  transition: 0.3s ease, transform 0.3s ease;
 }
 
 .section5-container .box-container .box img {
@@ -838,6 +870,7 @@
   padding: 8px 25px;
   text-decoration: none;
   border: 2px solid #01a982;
+  align-self: start; /* Align button to the left if needed */
 }
 
 .section5-container .box-container .box .btn:hover {
@@ -860,9 +893,9 @@
 /*section 6 starts*/
 .section6 {
   background-image: url("https://www.hpe.com/content/dam/hpe/shared-publishing/images-norend/bkg-wrappers/57301038-BW-Reversed-1920x1000.jpg.hpetransform/bounded-resize:width=3840/image.webp");
-  background-position: center; /* Centers the image horizontally and vertically */
-  background-size: cover; /* Ensures the image covers the entire section without distortion */
-  background-repeat: no-repeat; /* Prevents the background from repeating */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .section6-container {
   display: flex;
@@ -895,11 +928,18 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   margin: 20px;
   border-radius: 35px;
+  display: flex;
+  flex-direction: column; /* Align items vertically */
 }
 
 .section6-card-content {
+  /* padding: 16px;
+  padding-left: 22px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Evenly space items */
+  flex-grow: 1; /* Allow content to grow and fill space */
   padding: 16px;
-  padding-left: 22px;
 }
 
 .section6-card-content h3 {
@@ -932,6 +972,16 @@
   padding: 8px 25px;
   text-decoration: none;
   border: 2px solid #01a982;
+  /* margin-top: auto;
+  display: inline-block;
+  background: #fff;
+  color: #000000;
+  font-size: 17px;
+  border-radius: 20px;
+  padding: 8px 25px;
+  text-decoration: none;
+  border: 2px solid #01a982;
+  transition: all 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease; */
 }
 /*section 6 ends*/
 /*-----------------------------------*/

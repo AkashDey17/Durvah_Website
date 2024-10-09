@@ -1474,6 +1474,11 @@ footer {
   background: #fff;
   text-align: center;
   padding: 30px 20px;
+
+  /* Added Flexbox properties */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .services-container .services-box-container .services-box h3 {
@@ -1499,6 +1504,9 @@ footer {
   padding: 10px 30px;
   transition: 0.5s;
   border-radius: 50px;
+  /* Center the button at the bottom */
+  align-self: center;
+  margin-top: auto; /* Ensures it pushes up from the bottom */
 }
 
 .services-container
